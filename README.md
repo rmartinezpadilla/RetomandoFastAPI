@@ -91,24 +91,26 @@ Puedes usar modelos de datos con validación automática:
     def create_item(item: Item):
         return item
 ```
-### 5. python -m venv venv
+### 5. Crear entorno virtual
 
-    * Activar entorno virtual
+    *   python -m venv venv
+
+    *   Activar entorno virtual
         - acceder la ruta/ven/scripts/activate
         - ./venv/Scripts/activate
 
-    * Prueba de instalacion de paquetes al entorno virtual
+    *   Prueba de instalacion de paquetes al entorno virtual
         - python.exe - pip install --upgrade pip
 
-    * Extraer requerimientos
+    *   Extraer requerimientos
         - pip freeze > requirements.txt
 
-    * Desactivar entorno virtua
+    *   Desactivar entorno virtua
         - desactivate (en consola)
 
-    * Instalar requirements.txt en otro entorno virtual
+    *   Instalar requirements.txt en otro entorno virtual
         - pip install -r (ruta de requirements.txt -> ejemplo ) .\requirements.txt
-        
+
 ## Importante:
 FastAPI genera automáticamente dos interfaces interactivas:
     

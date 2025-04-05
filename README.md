@@ -77,7 +77,7 @@ FastAPI soporta:
         return {"item_id": item_id, "q": q}
 ```
 
-### 3. Validaciones con Pydantic
+### 4. Validaciones con Pydantic
 Puedes usar modelos de datos con validación automática:
 ```
     from pydantic import BaseModel
@@ -91,7 +91,24 @@ Puedes usar modelos de datos con validación automática:
     def create_item(item: Item):
         return item
 ```
+### 5. python -m venv venv
 
+    * Activar entorno virtual
+        - acceder la ruta/ven/scripts/activate
+        - ./venv/Scripts/activate
+
+    * Prueba de instalacion de paquetes al entorno virtual
+        - python.exe - pip install --upgrade pip
+
+    * Extraer requerimientos
+        - pip freeze > requirements.txt
+
+    * Desactivar entorno virtua
+        - desactivate (en consola)
+
+    * Instalar requirements.txt en otro entorno virtual
+        - pip install -r (ruta de requirements.txt -> ejemplo ) .\requirements.txt
+        
 ## Importante:
 FastAPI genera automáticamente dos interfaces interactivas:
     

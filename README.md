@@ -55,63 +55,46 @@ from fastapi import FastAPI
         return {"Hola": "FastAPI"}
 ```
 
-#### 2.2. Ejecutar:
+#### 2.2. Ahora puedes ejecutar tus servicios con:
 ```
     uvicorn main:app --reload
 ```
+### 3. Endpoints y métodos HTTP
+FastAPI soporta:    
 
-#### 2.4. Define los steps en JavaScript
-Crea steps/loginSteps.js:
+    * @app.get() → obtener datos
 
-    const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
+    * @app.post() → enviar datos
 
-    Before(async function () {
-        await this.launchBrowser();
-    });
-    
-    After(async function () {
-        await this.closeBrowser();
-    });
-    
-    Given('el usuario abre la página de login', async function () {
-        await this.page.goto('https://example.com/login');
-    });
+    * @app.put() → actualizar datos
 
-    When('el usuario ingresa {string} y {string}', async function (usuario, contraseña) {
-        await this.page.fill('input[name="username"]', usuario);
-        await this.page.fill('input[name="password"]', contraseña);
-        await this.page.click('button[type="submit"]');
-    });
-    
-    Then('el usuario debería ver la página de inicio', async function () {
-        await this.page.waitForSelector('#dashboard');
-    });
+    * @app.delete() → eliminar datos
 
-### 3. Configurar el package.json para ejecutar las pruebas
-En package.json, agrega el siguiente script para ejecutar las pruebas:
+## Ejemplo:
+```
+    @app.get("/items/{item_id}")
+    def read_item(item_id: int, q: str = None):
+        return {"item_id": item_id, "q": q}
+```
 
-    "scripts": {
-      "test": "cucumber-js"
-    }
+### 3. Validaciones con Pydantic
+Puedes usar modelos de datos con validación automática:
+```
+    from pydantic import BaseModel
 
-## Ahora puedes ejecutar tus pruebas con:
-    npm test
+    class Item(BaseModel):
+        name: str
+        price: float
+        is_offer: bool = False
+
+    @app.post("/items/")
+    def create_item(item: Item):
+        return item
+```
 
 ## Importante:
-Para ejecutar solo un archivo .feature específico con Cucumber, usa el siguiente comando:
+FastAPI genera automáticamente dos interfaces interactivas:
     
-    sh
-    npx cucumber-js features/login.feature
+    *   http://localhost:8000/docs → Swagger UI
 
-Si tus archivos .feature están en una subcarpeta, asegúrate de proporcionar la ruta correcta, por ejemplo:
-
-    sh
-    npx cucumber-js features/autenticacion/login.feature
-También puedes filtrar escenarios usando tags. Por ejemplo, si en tu .feature tienes:
-
-gherkin
-@regresion
-Scenario: Usuario inicia sesión correctamente
-Puedes ejecutar solo los escenarios con ese tag:
-sh
-npx cucumber-js --tags @regresion
+    *   http://localhost:8000/redoc → Redoc

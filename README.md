@@ -93,7 +93,7 @@ Puedes usar modelos de datos con validación automática:
 ```
 ### 5. Crear entorno virtual
 
-    *   python -m venv venv
+python -m venv venv
 
     *   Activar entorno virtual
         - acceder la ruta/ven/scripts/activate

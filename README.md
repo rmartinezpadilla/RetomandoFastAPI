@@ -36,6 +36,7 @@ FastAPI es un marco web moderno, rápido (de alto rendimiento) para crear API co
     * Uvicorn
 
 ### 1. Instalación
+
 Primero necesitas tener Python instalado (idealmente Python 3.10+).
 
 - Crear entorno virtual
@@ -58,7 +59,7 @@ python -m venv venv
     *   Instalar requirements.txt en otro entorno virtual
         - pip install -r (ruta de requirements.txt -> ejemplo ) .\requirements.txt
 
-- Primero, instala FastApi:
+- Instala FastApi:
 
     1. pip install fastapi[all]
 

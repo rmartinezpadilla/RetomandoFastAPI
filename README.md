@@ -37,6 +37,27 @@ FastAPI es un marco web moderno, rápido (de alto rendimiento) para crear API co
 
 ### 1. Instalación
 Primero necesitas tener Python instalado (idealmente Python 3.10+).
+
+- Crear entorno virtual
+
+python -m venv venv
+
+    *   Activar entorno virtual
+        - acceder la ruta/ven/scripts/activate
+        - ./venv/Scripts/activate
+
+    *   Prueba de instalacion de paquetes al entorno virtual
+        - python.exe - pip install --upgrade pip
+
+    *   Extraer requerimientos
+        - pip freeze > requirements.txt
+
+    *   Desactivar entorno virtua
+        - desactivate (en consola)
+
+    *   Instalar requirements.txt en otro entorno virtual
+        - pip install -r (ruta de requirements.txt -> ejemplo ) .\requirements.txt
+
 - Primero, instala FastApi:
 
     1. pip install fastapi[all]
@@ -91,25 +112,6 @@ Puedes usar modelos de datos con validación automática:
     def create_item(item: Item):
         return item
 ```
-### 5. Crear entorno virtual
-
-python -m venv venv
-
-    *   Activar entorno virtual
-        - acceder la ruta/ven/scripts/activate
-        - ./venv/Scripts/activate
-
-    *   Prueba de instalacion de paquetes al entorno virtual
-        - python.exe - pip install --upgrade pip
-
-    *   Extraer requerimientos
-        - pip freeze > requirements.txt
-
-    *   Desactivar entorno virtua
-        - desactivate (en consola)
-
-    *   Instalar requirements.txt en otro entorno virtual
-        - pip install -r (ruta de requirements.txt -> ejemplo ) .\requirements.txt
 
 ## Importante:
 FastAPI genera automáticamente dos interfaces interactivas:

@@ -40,6 +40,9 @@ Primero necesitas tener Python instalado (idealmente Python 3.10+).
 - Primero, instala FastApi:
 
     1. pip install fastapi[all]
+    2. npx playwright install
+    3. npm install --save-dev @cucumber/cucumber
+
 "[all]" instala también uvicorn, que se usa como servidor de desarrollo.
     
 - Ahora instala Playwright y Cucumber:

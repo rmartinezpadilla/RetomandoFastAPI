@@ -61,7 +61,7 @@ python -m venv venv
 
 - Instala FastApi:
 
-    1. pip install fastapi[all]
+    1. pip install "fastapi[all]"
 
 "[all]" instala también uvicorn, que se usa como servidor de desarrollo.
 
@@ -70,11 +70,11 @@ python -m venv venv
 ```
 from fastapi import FastAPI
 
-    app = FastAPI()
+app = FastAPI()
 
-    @app.get("/")
-    def read_root():
-        return {"Hola": "FastAPI"}
+@app.get("/")
+def read_root():
+    return {"Hola": "FastAPI"}
 ```
 
 #### 2.2. Ahora puedes ejecutar tus servicios con:
